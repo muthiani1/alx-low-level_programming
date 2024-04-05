@@ -11,6 +11,5 @@
 
 int main(void)
 {
-	srand(time(NULL));
-	return rand(); 
+	return (srand(time(NULL))); 
 }
