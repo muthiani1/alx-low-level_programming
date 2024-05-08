@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strprbk - Searches string for any set of bytes
+ * _strpbrk - Searches string for any set of bytes
  *
  * @s: string to search
  * @accept: bytes to search for
@@ -19,7 +19,6 @@ char *_strpbrk(char *s, char *accept)
 			if (s[i] == accept[j])
 			{
 				return (s + i);
-				break;
 			}
 		}
 	}
