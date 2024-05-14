@@ -3,9 +3,9 @@
 /**
  * _memset - Fills memory with constant byte
  *
- * @s - memory area to fill
- * @b - byte to fill
- * @n - first bytes of memory area
+ * @s: memory area to fill
+ * @b: byte to fill
+ * @n: first bytes of memory area
  * Return: pointer to memory area s
  */
 
