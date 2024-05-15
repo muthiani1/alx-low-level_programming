@@ -2,22 +2,28 @@
 #include <math.h>
 
 /**
- * _sqrt_recursion - returns the natural square root of a number
+ * _helper - function
+ * @num: number
+ * @i: series
  *
- * @n: number
- * Return: square root of number
+ * Return: integer
  */
 
-int st, nd;
-
-int helper(int num, int i)
+int _helper(int num, int i)
 {
 	if (i * i > num)
 		return (-1);
 	if (i * i == num)
 		return (i);
-	return (helper(num,i + 1));
+	return (_helper(num, i + 1));
 }
+
+/**
+ * _sqrt_recursion - returns the natural square root of a number
+ *
+ * @n: number
+ * Return: square root of number
+ */
 
 int _sqrt_recursion(int n)
 {
@@ -25,5 +31,5 @@ int _sqrt_recursion(int n)
 		return (-1);
 	if (n == 0 || n == 1)
 		return (n);
-	return (helper(n, 0));
+	return (_helper(n, 0));
 }
