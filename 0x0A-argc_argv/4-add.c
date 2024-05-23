@@ -10,23 +10,23 @@
 
 int main(int argc, char **argv)
 {
-	int i = argc - 1;
-	int sum = 0;
+	int i, j, sum, flag;
 
-	while (i >= 1)
+	sum = flag = 0;
+	for (i = 1; i < argc; i++)
 	{
-		if (atoi(argv[i]) == 0)
+		j = 0;
+		while (argv[i][j] != '\0')
 		{
-			printf("Error\n");
-			return (1);
+			if (argv[i][j] < 48 || argv[i][j] > 57)
+			{
+				printf("Error\n");
+				return (1);
+			}
+			j++;
 		}
-		else
-		{
-			sum += atoi(argv[i]);
-		}
-		i--;
+		sum += atoi(argv[i]);
 	}
-				
 	printf("%d\n", sum);
 	return (0);
 }
