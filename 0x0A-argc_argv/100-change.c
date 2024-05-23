@@ -10,34 +10,24 @@
 
 int main(int argc, char **argv)
 {
-	int coins[] = {1, 2, 5, 10, 25};
-	int i = 4;
-	int num = 0;
+	int values[] = {1, 2, 5, 10, 25};
+	int num;
+	int i, coins = 0;
 
 	if (argc == 1 || argc > 2)
 	{
 		printf("Error\n");
-		return (1);
+		return(1);
 	}
-	while (i >= 0)
+	num = atoi(argv[1]);
+	for (i = 4; i >= 0; i--)
 	{
-		num = atoi(argv[1]);
-		if (num < 0)
+		while (num - values[i] >= 0)
 		{
-			printf("0\n");
-			break;
-		}
-		if (num < coins[i])
-			i--;
-		else
-		{
-			if (num % coins[i])
-				printf("%d\n", (num / coins[i]) + 1);
-			else
-				printf("%d\n", num / coins[i]);
-			break;
+			num = num - values[i];
+			coins++;
 		}
 	}
+	printf("%d\n", coins);
 	return (0);
 }
-
