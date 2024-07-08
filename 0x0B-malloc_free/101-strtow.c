@@ -43,7 +43,7 @@ char **strtow(char *str)
 		return (NULL);
 	num_words = count_words(str);
 	words = malloc((num_words + 1) * sizeof(char *));
-	if (words == NULL)
+	if (words == NULL || num_words == 0)
 		return (NULL);
 	word_index = word_start = word_length = 0;
 	for (i = 0; str[i] != '\0'; i++)
@@ -54,7 +54,10 @@ char **strtow(char *str)
 			{
 				words[word_index] = malloc((word_length + 1) * sizeof(char));
 				if (words[word_index] == NULL)
+				{
+					free(words[word_index]);
 					return (NULL);
+				}
 				for (j = 0; j < word_length; j++)
 					words[word_index][j] = str[word_start + j];
 				words[word_index][word_length] = '\0';
