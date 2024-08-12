@@ -4,7 +4,6 @@
  * free_dog - frees memory allocated to d
  *
  * @d: memory to free
- * @Return: void
  */
 
 void free_dog(dog_t *d)
